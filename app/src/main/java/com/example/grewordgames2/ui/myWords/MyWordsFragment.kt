@@ -1,9 +1,11 @@
 package com.example.grewordgames2.ui.myWords
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.provider.Settings
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -325,9 +327,21 @@ class MyWordsFragment : Fragment() {
                         val col4 = newRow.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.delWord).apply {
                             setOnClickListener {
                                 val delWord = userDatabase.wordsList[userDatabase.dateAddedList.size - i - 1]
-                                myWordsStatus.text = "Adding the word '$delWord' to table"
-                                myWordsStatus.setNormalColor()
-                                delWord(delWord)
+
+                                val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+                                builder
+                                    .setTitle("Confirm Deletion")
+                                    .setMessage(Html.fromHtml("Are you sure you want to delete the word <i>$delWord</i> from the table?", Html.FROM_HTML_MODE_COMPACT))
+                                    .setNegativeButton("Close") { dialog, which ->
+                                    }
+                                    .setPositiveButton("Delete") { dialog, which ->
+                                        myWordsStatus.text = "Adding the word '$delWord' to table"
+                                        myWordsStatus.setNormalColor()
+                                        delWord(delWord)
+                                    }
+
+                                val dialog: AlertDialog = builder.create()
+                                dialog.show()
                             }
                         }
                         col4.text = "X"
@@ -342,8 +356,6 @@ class MyWordsFragment : Fragment() {
                     }
                 }
             }
-
-
     }
 
     private fun refreshTable() {
@@ -383,7 +395,35 @@ class MyWordsFragment : Fragment() {
     }
 
     private fun openPopUpWord(word: String){
-        Toast.makeText(activity, word, Toast.LENGTH_SHORT).show()
+        var currentMeaning = ""
+        var rawMeaning = dbWorker.queryWordMeaning(db, userTableName, word)
+
+        rawMeaning = rawMeaning.slice(2..rawMeaning.length-4)
+        val rawLines = rawMeaning.split("\",\"")
+
+        for (line in rawLines){
+            val cleanLine = line.split("\\t")
+            when (cleanLine[0]){
+                "adj" -> currentMeaning += "<i>Adjective</i><br>"
+                "adv" -> currentMeaning += "<i>Adverb</i><br>"
+                "n" -> currentMeaning += "<i>Noun</i><br>"
+                "v" -> currentMeaning += "<i>Verb</i><br>"
+                else -> {}
+            }
+            currentMeaning += cleanLine[1] + "<br><br>"
+        }
+
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        builder
+            .setMessage(Html.fromHtml(currentMeaning, Html.FROM_HTML_MODE_COMPACT))
+            .setTitle(word.capitalizeEachWord())
+            .setNegativeButton("Close") { dialog, which ->
+
+            }
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     private fun delWord(delWord: String){

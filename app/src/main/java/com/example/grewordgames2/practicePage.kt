@@ -186,7 +186,7 @@ class practicePage : AppCompatActivity() {
 
         var rawMeaning = dbWorker.queryWordMeaning(db, userTableName, fullList[randomValuesList[randomValuesInt]])
 
-        rawMeaning = rawMeaning.slice(2..rawMeaning.length-2)
+        rawMeaning = rawMeaning.slice(2..rawMeaning.length-4)
         val rawLines = rawMeaning.split("\",\"")
 
         for (line in rawLines){
@@ -230,7 +230,7 @@ class practicePage : AppCompatActivity() {
 
             var rawMeaning = dbWorker.queryWordMeaning(db, userTableName, fullList[randomValuesList[randomValuesInt]])
 
-            rawMeaning = rawMeaning.slice(2..rawMeaning.length-2)
+            rawMeaning = rawMeaning.slice(2..rawMeaning.length-4)
             val rawLines = rawMeaning.split("\",\"")
 
             for (line in rawLines){
