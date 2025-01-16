@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870836235983",
+    "project_id": "grewordgames",
+    "storage_bucket": "grewordgames.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870836235983:android:0d46b546e3732268b211ba",
+        "android_client_info": {
+          "package_name": "com.example.grewordgames2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7924TdN6r2y43MwQs07_kZdioi3aH5Fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_my_words"
+            android:icon="@drawable/baseline_book_24"
+            android:title="My Words" />
+        <item
+            android:id="@+id/nav_practice"
+            android:icon="@drawable/baseline_supervised_user_circle_24"
+            android:title="Practice" />
+
+        <item
+            android:id="@+id/nav_about_game"
+            android:icon="@drawable/baseline_lightbulb_24"
+            android:title="About Game" />
+    </group>
+</menu>

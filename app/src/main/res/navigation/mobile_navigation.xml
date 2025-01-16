@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.grewordgames2.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_my_words"
+        android:name="com.example.grewordgames2.ui.myWords.MyWordsFragment"
+        android:label="My Words"
+        tools:layout="@layout/fragment_my_words" />
+
+    <fragment
+        android:id="@+id/nav_practice"
+        android:name="com.example.grewordgames2.ui.practice.PracticeFragment"
+        android:label="Practice"
+        tools:layout="@layout/fragment_practice" />
+
+    <fragment
+        android:id="@+id/nav_about_game"
+        android:name="com.example.grewordgames2.ui.aboutGame.AboutGameFragment"
+        android:label="AboutGame"
+        tools:layout="@layout/fragment_about_game" />
+</navigation>

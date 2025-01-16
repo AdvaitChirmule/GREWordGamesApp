@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.practice.PracticeFragment">
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/difficulty0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fully Random Difficulty" />
+
+        <RadioButton
+            android:id="@+id/difficulty1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Standard Difficulty" />
+
+        <RadioButton
+            android:id="@+id/difficulty2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New Biased Difficulty" />
+
+        <RadioButton
+            android:id="@+id/difficulty3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Struggling Biased Difficulty" />
+
+        <RadioButton
+            android:id="@+id/difficulty4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nightmare Difficulty" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submitDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+</androidx.constraintlayout.widget.ConstraintLayout>

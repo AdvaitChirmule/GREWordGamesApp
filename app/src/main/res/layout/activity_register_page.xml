@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registerPage">
+
+    <TextView
+        android:id="@+id/registerStatus"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/emailIDRegisterInput"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/usernameRegisterInput"
+        app:layout_constraintEnd_toEndOf="@+id/usernameRegisterInput" />
+
+    <EditText
+        android:id="@+id/usernameRegisterInput"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/passwordVerifyRegisterInput"
+        app:layout_constraintEnd_toEndOf="@+id/passwordVerifyRegisterInput" />
+
+    <EditText
+        android:id="@+id/passwordVerifyRegisterInput"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegisterInput"
+        app:layout_constraintEnd_toEndOf="@+id/passwordRegisterInput" />
+
+    <EditText
+        android:id="@+id/passwordRegisterInput"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/registerStatus"
+        app:layout_constraintEnd_toEndOf="@+id/registerStatus" />
+
+    <TextView
+        android:id="@+id/emailIDRegisterText"
+        android:layout_width="100dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Email ID"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/usernameRegisterText"
+        app:layout_constraintEnd_toStartOf="@+id/emailIDRegisterInput" />
+
+    <TextView
+        android:id="@+id/usernameRegisterText"
+        android:layout_width="100dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Username"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordVerifyRegisterText"
+        app:layout_constraintEnd_toStartOf="@+id/usernameRegisterInput" />
+
+    <TextView
+        android:id="@+id/passwordVerifyRegisterText"
+        android:layout_width="100dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Password"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegisterText"
+        app:layout_constraintEnd_toStartOf="@+id/passwordVerifyRegisterInput" />
+
+    <TextView
+        android:id="@+id/passwordRegisterText"
+        android:layout_width="100dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Reenter Password"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/registerStatus"
+        app:layout_constraintEnd_toStartOf="@+id/passwordRegisterInput" />
+
+    <Button
+        android:id="@+id/loginRegisterButton"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:onClick="registerClick"
+        android:text="Login"
+        app:layout_constraintEnd_toStartOf="@+id/registerRegisterButton"
+        app:layout_constraintTop_toBottomOf="@+id/registerStatus" />
+
+    <Button
+        android:id="@+id/registerRegisterButton"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="loginClick"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="@+id/registerStatus"
+        app:layout_constraintTop_toBottomOf="@+id/registerStatus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

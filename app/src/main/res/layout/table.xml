@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/templateRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp">
+
+    <TextView
+        android:id="@+id/srNoCol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        android:text="Sr No"
+        android:textAlignment="center" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/wordCol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.40"
+        android:background="@android:color/transparent"
+        android:padding="0dp"
+        android:shadowColor="@android:color/transparent"
+        android:text="Word"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/dateCol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.23"
+        android:text="Date Added"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/proficiencyCol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.20"
+        android:text="Proficiency"
+        android:textAlignment="center" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delWord"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.02"
+        android:background="@android:color/transparent"
+        android:padding="0dp"
+        android:shadowColor="@android:color/transparent"
+        android:text=" "
+        android:textAlignment="center"
+        android:textAllCaps="false" />
+</TableRow>

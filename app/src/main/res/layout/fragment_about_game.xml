@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.aboutGame.AboutGameFragment">
+
+    <ScrollView
+        android:id="@+id/aboutGameScroll"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/agTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Introduction"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/aboutGameScroll"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/agText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nHello, welcome to GRE Word Games! I'll start with the story of this application. A few years ago, I was preparing for
+my own GRE test, and I spent months making flashcards and trying to memorize all the words. However, because I compiled
+my database from various resources, I could not have any app where I could input my words and revise my words. And thus,
+GRE Word Games was created. I finally had my, 'alright, I will do it myself' moment!
+\n\nThe objective of this app is fairly simple, you input your own words, and the app gives you a word at random, then you
+think whether you know its meaning, and once you hit submit, the app will display the actual word meaning to you. You can
+either record it as right or wrong, which allows you to keep track of the words you are struggling with. You can adjust
+the difficulty of your practice session before starting. Let's discuss the various difficulty levels next.
+\n\n
+" />
+
+            <TextView
+                android:id="@+id/agTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Difficulty Levels"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/aboutGameScroll"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/agText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n1. Fully Random Difficulty: This is the default difficulty, you get a word at random, then another one, and so on,
+independent of any other factors.
+\n\n2. Standard Difficulty: All of your words are classified into four groups: new words, difficult words (with low proficiency),
+medium words (with low to high proficiency) and easy words (with high proficiency). You get words in batches. The batches
+go easy -> difficulty -> new -> medium before looping over. This helps to ensure there is a greater focus on the words
+you are struggling with. All of the batches are of the same size.
+\n\n3. New Biased Difficulty: This is same as the standard difficulty, except a greater emphasis is put on the new words by
+increasing the number of words in the new words batch,
+\n\n4. Struggling Biased Difficulty: This is same as the standard difficulty, except a greater emphasis is put on the words
+you are having low proficiency by increasing the number of words in the struggling words batch,
+\n\n5. Nightmare Difficulty: Instead of the four batches of the standard difficulty, there are only two batches, new words,
+and difficult words. This is useful when you want to only focus on improving your words without revising.
+\n\n
+" />
+
+            <TextView
+                android:id="@+id/agTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="More Features"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/aboutGameScroll"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/agText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nMy Words: You can view all the words you have added to your database on the My Words section. It allows you to keep track
+of your progress, view when you added the words and your proficiency at each word.
+\n\nCross Platform Access: You can use this application across various devices. The data is updated real time and you can log in to
+any device to access your account, add new words and practice them.
+\n\n
+" />
+
+            <TextView
+                android:id="@+id/agTitle4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Future Scope"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/aboutGameScroll"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/agText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nMneumonics: The ability to create your own flashcard by tapping on the word in the My Words section and adding a mneumonic.
+\n\nMultiplayer practice: The ability to play an online playing game with your friends where you draw to guess the right word,
+which could serve not only as a fun game but helping you remember words through association.
+\n\nIf you have any other suggestions which you would like to have in the application, feel free to email me at
+achirmul@asu.edu.
+\n\n
+" />
+
+            <TextView
+                android:id="@+id/agTitle5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About Creator"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/aboutGameScroll"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/agText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\nHey, I am Advait Chirmule, the creator of the app. I am a student at Arizona State University. I created the first,
+personal version of this application back in 2022, but now I am redoing it to release it on a larger scale with the new
+knowledge I have accumulated over the years. You can contact me on my email ID (achirmul@asu.edu) and I look forward to
+hearing back your feedback about the applications, and if you have any other ideas that I can implement! Thank you for
+playing and I wish you the best of luck in your GRE!
+" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
