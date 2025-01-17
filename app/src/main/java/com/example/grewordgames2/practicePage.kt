@@ -184,22 +184,8 @@ class practicePage : AppCompatActivity() {
         meaningPlaceholder.text = ""
         randomValuesInt += 1
 
-        var rawMeaning = dbWorker.queryWordMeaning(db, userTableName, fullList[randomValuesList[randomValuesInt]])
-
-        rawMeaning = rawMeaning.slice(2..rawMeaning.length-4)
-        val rawLines = rawMeaning.split("\",\"")
-
-        for (line in rawLines){
-            val cleanLine = line.split("\\t")
-            when (cleanLine[0]){
-                "adj" -> currentMeaning += "<i>Adjective<i><br>"
-                "adv" -> currentMeaning += "<i>Adverb</i><br>"
-                "n" -> currentMeaning += "<i>Noun</i><br>"
-                "v" -> currentMeaning += "<i>Verb<i><br>"
-                else -> {}
-            }
-            currentMeaning += cleanLine[1] + "<br><br>"
-        }
+        val rawMeaning = dbWorker.queryWordMeaning(db, userTableName, fullList[randomValuesList[randomValuesInt]])
+        currentMeaning = cleanWordMeaning(rawMeaning)
     }
 
     private fun standardClassification() {
@@ -228,22 +214,8 @@ class practicePage : AppCompatActivity() {
             meaningPlaceholder.text = ""
             currentMeaning = ""
 
-            var rawMeaning = dbWorker.queryWordMeaning(db, userTableName, fullList[randomValuesList[randomValuesInt]])
-
-            rawMeaning = rawMeaning.slice(2..rawMeaning.length-4)
-            val rawLines = rawMeaning.split("\",\"")
-
-            for (line in rawLines){
-                val cleanLine = line.split("\\t")
-                when (cleanLine[0]){
-                    "adj" -> currentMeaning += "<i>Adjective</i><br>"
-                    "adv" -> currentMeaning += "<i>Adverb</i><br>"
-                    "n" -> currentMeaning += "<i>Noun</i><br>"
-                    "v" -> currentMeaning += "<i>Verb</i><br>"
-                    else -> {}
-                }
-                currentMeaning += cleanLine[1] + "<br><br>"
-            }
+            val rawMeaning = dbWorker.queryWordMeaning(db, userTableName, fullList[randomValuesList[randomValuesInt]])
+            currentMeaning = cleanWordMeaning(rawMeaning)
 
             randomValuesInt += 1
         }

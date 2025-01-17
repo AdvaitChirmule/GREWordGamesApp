@@ -126,6 +126,26 @@ fun String.recordResult(result: Int): String{
     return "error"
 }
 
+fun cleanWordMeaning(rawText: String): String {
+    val rawMeaning = rawText.slice(2..rawText.length-4)
+    val rawLines = rawMeaning.split("\",\"")
+    var currentMeaning = ""
+
+    for (line in rawLines){
+        val cleanLine = line.split("\\t")
+        when (cleanLine[0]){
+            "adj" -> currentMeaning += "<i>Adjective</i><br>"
+            "adv" -> currentMeaning += "<i>Adverb</i><br>"
+            "n" -> currentMeaning += "<i>Noun</i><br>"
+            "v" -> currentMeaning += "<i>Verb</i><br>"
+            else -> {}
+        }
+        currentMeaning += cleanLine[1] + "<br><br>"
+    }
+
+    return currentMeaning
+}
+
 fun isOnline(context: Context): Boolean{
     val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)

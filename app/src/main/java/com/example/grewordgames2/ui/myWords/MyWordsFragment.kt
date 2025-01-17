@@ -20,6 +20,7 @@ import com.example.grewordgames2.R
 import com.example.grewordgames2.WordClass
 import com.example.grewordgames2.WordMetadata
 import com.example.grewordgames2.capitalizeEachWord
+import com.example.grewordgames2.cleanWordMeaning
 import com.example.grewordgames2.databinding.FragmentMyWordsBinding
 import com.example.grewordgames2.howOld
 import com.example.grewordgames2.proficiencyPercentage
@@ -396,22 +397,8 @@ class MyWordsFragment : Fragment() {
 
     private fun openPopUpWord(word: String){
         var currentMeaning = ""
-        var rawMeaning = dbWorker.queryWordMeaning(db, userTableName, word)
-
-        rawMeaning = rawMeaning.slice(2..rawMeaning.length-4)
-        val rawLines = rawMeaning.split("\",\"")
-
-        for (line in rawLines){
-            val cleanLine = line.split("\\t")
-            when (cleanLine[0]){
-                "adj" -> currentMeaning += "<i>Adjective</i><br>"
-                "adv" -> currentMeaning += "<i>Adverb</i><br>"
-                "n" -> currentMeaning += "<i>Noun</i><br>"
-                "v" -> currentMeaning += "<i>Verb</i><br>"
-                else -> {}
-            }
-            currentMeaning += cleanLine[1] + "<br><br>"
-        }
+        val rawMeaning = dbWorker.queryWordMeaning(db, userTableName, word)
+        currentMeaning = cleanWordMeaning(rawMeaning)
 
 
         val builder: AlertDialog.Builder = AlertDialog.Builder(context)
